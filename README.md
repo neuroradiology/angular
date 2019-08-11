@@ -1,70 +1,28 @@
-[![Build Status](https://travis-ci.org/angular/angular.svg?branch=master)](https://travis-ci.org/angular/angular)
+[![CircleCI](https://circleci.com/gh/angular/angular/tree/master.svg?style=shield)](https://circleci.com/gh/angular/workflows/angular/tree/master)
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=LzF3RzBVVGt6VWE2S0hHaC9uYllOZz09LS1BVjNTclBKV0x4eVRlcjA4QVY1M0N3PT0=--eb4ce8c8dc2c1c5b2b5352d473ee12a73ac20e06)](https://www.browserstack.com/automate/public-build/LzF3RzBVVGt6VWE2S0hHaC9uYllOZz09LS1BVjNTclBKV0x4eVRlcjA4QVY1M0N3PT0=--eb4ce8c8dc2c1c5b2b5352d473ee12a73ac20e06)
+[![Join the chat at https://gitter.im/angular/angular](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular/angular?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://badge.fury.io/js/%40angular%2Fcore.svg)](https://www.npmjs.com/@angular/core)
 
-## Build
 
-### Prerequisites:
+# Angular
 
-1. `npm install`
-2. `npm install -g gulp karma`
-3. `gulp build`
-4. `pub get`
+Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
 
-### Folder structure
+## Quickstart
 
-* `modules/*`: modules that will be loaded in the browser
-* `tools/*`: tools that are needed to build Angular
+[Get started in 5 minutes][quickstart].
 
-### File endings
+## Changelog
 
-* `*.js`: javascript files that get transpiled to Dart and EcmaScript 5
-* `*.es6`: javascript files that get transpiled only to EcmaScript 5
-* `*.es5`: javascript files that don't get transpiled
-* `*.dart`: dart files that don't get transpiled
+[Learn about the latest improvements][changelog]. 
 
-### Build:
+## Want to help?
 
-1. `gulp build` -> result is in `build` folder
+Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our
+guidelines for [contributing][contributing] and then check out one of our issues in the [hotlist: community-help](https://github.com/angular/angular/labels/hotlist%3A%20community-help).
 
-  * will also run `pub get` for the subfolders in `modules`
-    and run `dartanalyzer` for every file that matches
-    `<module>/src/<module>.dart`, e.g. `di/src/di.dart`
-
-2. `gulp clean` -> cleans the `build` folder
-
-### Tests:
-
-1. `karma start karma-js.conf.js`: JS tests
-2. `karma start karma-dart.conf.js`: Dart tests
-
-Notes for all tests:
-
-The karma preprocessor is setup in a way so that after every test run
-the transpiler is reloaded. With that it is possible to make changes
-to the preprocessor and run the tests without exiting karma
-(just touch a test file that you would like to run).
-
-Restriction for Dart tests (for now):
-
-  * Due to a bug `karma-dart` plugin,
-    this will use the files in the `build` folder for resolving
-    `package:` dependencies (created e.g. for `import ... from 'di:di'`).
-    So you need to execute `gulp build` before this.
-
-## Debug the transpiler
-
-If you need to debug the transpiler:
-
-- add a `debugger;` statement in the transpiler code,
-- from the root folder, execute `node debug node_modules/.bin/gulp build` to enter the node
-  debugger
-- press "c" to execute the program until you reach the `debugger;` statement,
-- you can then type "repl" to enter the REPL and inspect variables in the context.
-
-See the [Node.js manual](http://nodejs.org/api/debugger.html) for more information.
-
-Notes:
-- You can also execute `node node_modules/.bin/karma start karma-dart.conf.js` depending on which
-  code you want to debug (the former will process the "modules" folder while the later processes
-  the transpiler specs),
-- You can also add `debugger;` statements in the specs (JavaScript). The execution will halt when
-  the developer tools are opened in the browser running Karma.
+[browserstack]: https://www.browserstack.com/automate/public-build/LzF3RzBVVGt6VWE2S0hHaC9uYllOZz09LS1BVjNTclBKV0x4eVRlcjA4QVY1M0N3PT0=--eb4ce8c8dc2c1c5b2b5352d473ee12a73ac20e06
+[contributing]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md
+[quickstart]: https://angular.io/start
+[changelog]: https://github.com/angular/angular/blob/master/CHANGELOG.md
+[ng]: https://angular.io
